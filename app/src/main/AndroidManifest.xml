@@ -1,0 +1,34 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="Aire-Venture"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AireVenture">
+
+        <!-- Auth / Login screen -->
+        <activity
+            android:name=".AuthActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Pairing screen -->
+        <activity
+            android:name=".PairingActivity"
+            android:exported="false" />
+
+        <!-- Converter screen -->
+        <activity
+            android:name=".ConverterActivity"
+            android:exported="false" />
+        <!-- Home screen -->
+        <activity android:name=".HomeActivity" />
+
+
+    </application>
+
+</manifest>

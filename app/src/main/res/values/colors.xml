@@ -1,0 +1,14 @@
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#1A1C1E</color>
+    <color name="text_secondary">#6C7278</color>
+    <color name="tab_bg">#F5F6F9</color>
+    <color name="tab_stroke">#F5F6F9</color>
+    <color name="tab_active_text">#232447</color>
+    <color name="tab_inactive_text">#7D7D91</color>
+    <color name="field_stroke">#EDF1F3</color>
+    <color name="field_icon">#ACB5BB</color>
+    <color name="link_blue">#4D81E7</color>
+    <color name="brand_yellow">#FBC30E</color>
+    <color name="black">#000000</color>
+</resources>

@@ -1,0 +1,319 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:1:1-34:12
+MERGED from [androidx.databinding:viewbinding:8.4.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\854cf6986c2de5f603d7123f8644ba51\transformed\viewbinding-8.4.2\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a6671d7985028f8e2d9cbeceacb04873\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\78b2c471f5644b3dac8fe8599bada582\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\75fd5beb1861698e3d93f6e49aa78791\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\0825a9885fd0956728783d560a5264ca\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5f41b2ed877e5acf38b043d94c510773\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a2b57e42ce5520a3a129c79aad242b7c\transformed\fragment-1.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment-ktx:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5403b122a7ee433aef85fb3e9d4a0a34\transformed\fragment-ktx-1.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1a4bfe10f5d0270c988276def56a441e\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ecca9611fb26fcbfada96c488304976e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fd97ca0119d35655543540d4f0d0a22f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\187790fe076ecfdabdfc81431ce15761\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e02677b22cf6420a5df489647b209431\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ffdf44f0a5f6de004b4271abbc705621\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a4975c32f76c739059033dc884d4fdbd\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\590b87b488eb2a1f0822009149889662\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\07f55a5b8dcdccc349b0540469bd12d5\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\3b1964a9e3f823768fb6749e7b95b508\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\030f5e85f3ee8331019fdb8a90fa56e1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\badb1c72deba3929aff3e54acc67480f\transformed\activity-ktx-1.8.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\411fbc31d077b64151bb789c8b6f599f\transformed\activity-1.8.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9731a1aec62f16e36d55f4679198cc03\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9be44b3c32b52d5e932669f83bf9c2f1\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4b9e10761c66567c557e54736168b693\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\14b886fc99b5e6ad4b341432ca31e7d8\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\abc1dbbffcc8a6ac0baa82f28a3f0fc5\transformed\lifecycle-viewmodel-ktx-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fe612ada70524b9e77e27bcc2011447e\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\148e01919664eca728d4594e438e1a5b\transformed\lifecycle-runtime-ktx-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c2c6ecd77b7b591d515407677f35ed1f\transformed\lifecycle-livedata-core-ktx-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d0b5251715deca4a826be40c416cf855\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a7b6a331feb7714f850cc077a424ab70\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\b40566d645a539e3d4f69d719c6bec12\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1891ac05652509f94900bedea0d435b9\transformed\core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\17bc92576cb229ee9643ccbc5a3bb42c\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d2c35061b58c8f8db288b6d8bdb286cc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\7dcd457c28be8c6bae2d52b186279593\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\28bd28c4db7657086cf4cbeb1509357f\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\494c70d9cc1c9d2820c056241859a4c1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d1ffaa7a16fcd73e23629b2fb20402c2\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e312f152cf57e31b71e1933e4f870fd9\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\cfdbda43c19cc95ce54f598df1e7fd80\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\41fa9e3bae3cab59bbd7ab5d8bf902df\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4387cbc5d422d1b9b5b0ec283fd93c17\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:3:5-32:19
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:3:5-32:19
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a6671d7985028f8e2d9cbeceacb04873\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a6671d7985028f8e2d9cbeceacb04873\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\78b2c471f5644b3dac8fe8599bada582\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\78b2c471f5644b3dac8fe8599bada582\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\494c70d9cc1c9d2820c056241859a4c1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\494c70d9cc1c9d2820c056241859a4c1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:6:9-35
+	android:label
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:5:9-37
+	android:allowBackup
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:4:9-35
+	android:theme
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:7:9-49
+activity#com.aireventure.auth.AuthActivity
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:10:9-17:20
+	android:exported
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:12:13-36
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:11:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:13:13-16:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:15:17-77
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:15:27-74
+activity#com.aireventure.auth.PairingActivity
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:20:9-22:40
+	android:exported
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:21:13-44
+activity#com.aireventure.auth.ConverterActivity
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:26:13-46
+activity#com.aireventure.auth.HomeActivity
+ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:29:9-50
+	android:name
+		ADDED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml:29:19-47
+uses-sdk
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.4.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\854cf6986c2de5f603d7123f8644ba51\transformed\viewbinding-8.4.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.4.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\854cf6986c2de5f603d7123f8644ba51\transformed\viewbinding-8.4.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a6671d7985028f8e2d9cbeceacb04873\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a6671d7985028f8e2d9cbeceacb04873\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\78b2c471f5644b3dac8fe8599bada582\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\78b2c471f5644b3dac8fe8599bada582\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\75fd5beb1861698e3d93f6e49aa78791\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\75fd5beb1861698e3d93f6e49aa78791\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\0825a9885fd0956728783d560a5264ca\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\0825a9885fd0956728783d560a5264ca\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5f41b2ed877e5acf38b043d94c510773\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5f41b2ed877e5acf38b043d94c510773\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a2b57e42ce5520a3a129c79aad242b7c\transformed\fragment-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a2b57e42ce5520a3a129c79aad242b7c\transformed\fragment-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5403b122a7ee433aef85fb3e9d4a0a34\transformed\fragment-ktx-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.8.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\5403b122a7ee433aef85fb3e9d4a0a34\transformed\fragment-ktx-1.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1a4bfe10f5d0270c988276def56a441e\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1a4bfe10f5d0270c988276def56a441e\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ecca9611fb26fcbfada96c488304976e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ecca9611fb26fcbfada96c488304976e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fd97ca0119d35655543540d4f0d0a22f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fd97ca0119d35655543540d4f0d0a22f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\187790fe076ecfdabdfc81431ce15761\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\187790fe076ecfdabdfc81431ce15761\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e02677b22cf6420a5df489647b209431\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e02677b22cf6420a5df489647b209431\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ffdf44f0a5f6de004b4271abbc705621\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\ffdf44f0a5f6de004b4271abbc705621\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a4975c32f76c739059033dc884d4fdbd\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a4975c32f76c739059033dc884d4fdbd\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\590b87b488eb2a1f0822009149889662\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\590b87b488eb2a1f0822009149889662\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\07f55a5b8dcdccc349b0540469bd12d5\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\07f55a5b8dcdccc349b0540469bd12d5\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\3b1964a9e3f823768fb6749e7b95b508\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\3b1964a9e3f823768fb6749e7b95b508\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\030f5e85f3ee8331019fdb8a90fa56e1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\030f5e85f3ee8331019fdb8a90fa56e1\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\badb1c72deba3929aff3e54acc67480f\transformed\activity-ktx-1.8.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\badb1c72deba3929aff3e54acc67480f\transformed\activity-ktx-1.8.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\411fbc31d077b64151bb789c8b6f599f\transformed\activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\411fbc31d077b64151bb789c8b6f599f\transformed\activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9731a1aec62f16e36d55f4679198cc03\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9731a1aec62f16e36d55f4679198cc03\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9be44b3c32b52d5e932669f83bf9c2f1\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\9be44b3c32b52d5e932669f83bf9c2f1\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4b9e10761c66567c557e54736168b693\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4b9e10761c66567c557e54736168b693\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\14b886fc99b5e6ad4b341432ca31e7d8\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\14b886fc99b5e6ad4b341432ca31e7d8\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\abc1dbbffcc8a6ac0baa82f28a3f0fc5\transformed\lifecycle-viewmodel-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\abc1dbbffcc8a6ac0baa82f28a3f0fc5\transformed\lifecycle-viewmodel-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fe612ada70524b9e77e27bcc2011447e\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\fe612ada70524b9e77e27bcc2011447e\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\148e01919664eca728d4594e438e1a5b\transformed\lifecycle-runtime-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\148e01919664eca728d4594e438e1a5b\transformed\lifecycle-runtime-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c2c6ecd77b7b591d515407677f35ed1f\transformed\lifecycle-livedata-core-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c2c6ecd77b7b591d515407677f35ed1f\transformed\lifecycle-livedata-core-ktx-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d0b5251715deca4a826be40c416cf855\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d0b5251715deca4a826be40c416cf855\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a7b6a331feb7714f850cc077a424ab70\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a7b6a331feb7714f850cc077a424ab70\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\b40566d645a539e3d4f69d719c6bec12\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\b40566d645a539e3d4f69d719c6bec12\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1891ac05652509f94900bedea0d435b9\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\1891ac05652509f94900bedea0d435b9\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\17bc92576cb229ee9643ccbc5a3bb42c\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\17bc92576cb229ee9643ccbc5a3bb42c\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d2c35061b58c8f8db288b6d8bdb286cc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d2c35061b58c8f8db288b6d8bdb286cc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\7dcd457c28be8c6bae2d52b186279593\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\7dcd457c28be8c6bae2d52b186279593\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\28bd28c4db7657086cf4cbeb1509357f\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\28bd28c4db7657086cf4cbeb1509357f\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\494c70d9cc1c9d2820c056241859a4c1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\494c70d9cc1c9d2820c056241859a4c1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d1ffaa7a16fcd73e23629b2fb20402c2\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\d1ffaa7a16fcd73e23629b2fb20402c2\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e312f152cf57e31b71e1933e4f870fd9\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e312f152cf57e31b71e1933e4f870fd9\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\cfdbda43c19cc95ce54f598df1e7fd80\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\cfdbda43c19cc95ce54f598df1e7fd80\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\41fa9e3bae3cab59bbd7ab5d8bf902df\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\41fa9e3bae3cab59bbd7ab5d8bf902df\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4387cbc5d422d1b9b5b0ec283fd93c17\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\4387cbc5d422d1b9b5b0ec283fd93c17\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Janya Mali\Downloads\AireVentureAuthTabs\app\src\main\AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\e19e3655857e84b9aa4bbdb78cf8d1b1\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\c78d1ac5e6b22b4404d15d912c5609a2\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.aireventure.auth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.aireventure.auth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\708de27601403c4ff4089e9986728893\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\74951101040b71e937e08f3ca915132b\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Janya Mali\.gradle\caches\9.0-milestone-1\transforms\a362b773e51e8e963337f177b9ada906\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92

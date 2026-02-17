@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="brand_yellow">#FBC30E</color>
+    <color name="field_icon">#ACB5BB</color>
+    <color name="field_stroke">#EDF1F3</color>
+    <color name="link_blue">#4D81E7</color>
+    <color name="tab_active_text">#232447</color>
+    <color name="tab_bg">#F5F6F9</color>
+    <color name="tab_inactive_text">#7D7D91</color>
+    <color name="tab_stroke">#F5F6F9</color>
+    <color name="text_primary">#1A1C1E</color>
+    <color name="text_secondary">#6C7278</color>
+    <color name="white">#FFFFFF</color>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="field_radius">10dp</dimen>
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="tab_height">36dp</dimen>
+    <dimen name="tab_inner_height">32dp</dimen>
+    <dimen name="tab_inner_radius">6dp</dimen>
+    <dimen name="tab_radius">7dp</dimen>
+    <style name="Theme.AireVenture" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

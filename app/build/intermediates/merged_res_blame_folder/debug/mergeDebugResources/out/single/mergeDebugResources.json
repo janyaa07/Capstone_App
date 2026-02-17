@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_activity_converter.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/activity_converter.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_info_card.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_info_card.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_primary_button.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_primary_button.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_fragment_control_panel.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/fragment_control_panel.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_google_button.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_google_button.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_controlpanel.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/controlpanel.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_bottom_toggle.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_bottom_toggle.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_eye_off.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/eye_off.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_fragment_signup.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/fragment_signup.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_icon_add.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/icon_add.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_tab_selected.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_tab_selected.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_ellipse_20.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/ellipse_20.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_activity_auth.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/activity_auth.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_tab_container.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_tab_container.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_tab_indicator.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_tab_indicator.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_field.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_field.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_datapanel.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/datapanel.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_logo.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/logo.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_activity_pairing.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/activity_pairing.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_icon.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/icon.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_settings.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/settings.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_activity_home.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_fragment_data_panel.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/fragment_data_panel.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_bg_tab_unselected.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/bg_tab_unselected.xml"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_icon_minus.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/icon_minus.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/drawable_google.png.flat",
+        "source": "com.aireventure.auth.app-main-39:/drawable/google.png"
+    },
+    {
+        "merged": "com.aireventure.auth.app-debug-37:/layout_fragment_login.xml.flat",
+        "source": "com.aireventure.auth.app-main-39:/layout/fragment_login.xml"
+    }
+]

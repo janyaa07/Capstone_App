@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="screen_padding">24dp</dimen>
+
+    <dimen name="tab_height">36dp</dimen>
+    <dimen name="tab_inner_height">32dp</dimen>
+    <dimen name="tab_radius">7dp</dimen>
+    <dimen name="tab_inner_radius">6dp</dimen>
+
+    <dimen name="field_radius">10dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+</resources>
