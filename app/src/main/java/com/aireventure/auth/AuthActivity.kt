@@ -13,6 +13,8 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
     private var currentTab: Tab = Tab.LOGIN
 
+
+
     enum class Tab { LOGIN, SIGNUP }
 
     override fun onCreate(savedInstanceState: Bundle?) {

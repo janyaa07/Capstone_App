@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/liveDataText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Waiting for Bluetooth..."
+        android:textSize="16sp"
         android:gravity="center"
-        android:text="Data Panel – Coming Soon"
-        android:textSize="18sp"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- BLUETOOTH SECTION -->
+    <TextView
+        android:id="@+id/btAirFlowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="BT Air Flow:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/liveDataText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/btRoomTempText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="BT Room Temp:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/btAirFlowText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/setpointText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="BT Setpoint:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/btRoomTempText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- AWS SECTION -->
+    <TextView
+        android:id="@+id/awsAirFlowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AWS Air Flow:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/setpointText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/awsRoomTempText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AWS Room Temp:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/awsAirFlowText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/awsSetpointText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AWS Setpoint:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/awsRoomTempText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
