@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.aireventure.auth.databinding.ActivityHomeBinding
+import android.content.Intent
 
 class HomeActivity : AppCompatActivity() {
 
@@ -45,6 +46,12 @@ class HomeActivity : AppCompatActivity() {
             binding.settingsMenu.visibility =
                 if (binding.settingsMenu.visibility == View.VISIBLE)
                     View.GONE else View.VISIBLE
+            binding.connectedDevicesButton.setOnClickListener {
+                startActivity(
+                    Intent(this, ConnectedDevicesActivity::class.java)
+                )
+            }
+
         }
     }
 }

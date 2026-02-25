@@ -43,6 +43,8 @@
             android:exported="false" />
         <!-- Home screen -->
         <activity android:name=".HomeActivity" />
+        <activity android:name=".ConnectedDevicesActivity"/>
+
 
 
     </application>
