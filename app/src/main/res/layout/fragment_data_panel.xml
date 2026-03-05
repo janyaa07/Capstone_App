@@ -51,17 +51,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
+
+    <TextView
+        android:id="@+id/tvCurrentSetpoint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:gravity="center"
+        android:text="Set To: 22.0°C"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setpointText" />
+
+
+
+    <!-- SETPOINT CONTROLS -->
+
     <!-- AWS SECTION -->
+
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="268dp"
+        android:text="-"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setpointText" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="72dp"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setpointText" />
+
     <TextView
         android:id="@+id/awsAirFlowText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="AWS Air Flow:"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/setpointText"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setpointText" />
 
     <TextView
         android:id="@+id/awsRoomTempText"

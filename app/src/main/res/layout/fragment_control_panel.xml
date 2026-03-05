@@ -11,13 +11,7 @@
         android:layout_height="220dp"
         android:src="@drawable/ellipse_20"/>
 
-    <TextView
-        android:text="24°C"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginTop="-140dp"/>
+
 
     <TextView
         android:text="Device ID: XXXXXXXX"
@@ -32,16 +26,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <!-- Setpoint display — add this above the +/- buttons -->
+        <TextView
+            android:id="@+id/tvSetpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22.0°C"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Minus button -->
         <ImageView
+            android:id="@+id/btnMinus"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/icon_minus"/>
+            android:src="@drawable/icon_minus"
+            android:clickable="true"
+            android:focusable="true"/>
 
+        <!-- Plus button -->
         <ImageView
+            android:id="@+id/btnAdd"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="24dp"
-            android:src="@drawable/icon_add"/>
+            android:src="@drawable/icon_add"
+            android:clickable="true"
+            android:focusable="true"/>
+
     </LinearLayout>
 
     <!-- Info Cards -->
