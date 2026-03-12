@@ -52,11 +52,15 @@
         android:layout_marginTop="16dp"/>
 
 
+    <!-- SETPOINT CONTROLS -->
+
+    <!-- AWS SECTION -->
+
     <TextView
         android:id="@+id/tvCurrentSetpoint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Set To: 22.0°C"
         android:textColor="@color/black"
@@ -67,21 +71,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/setpointText" />
 
-
-
-    <!-- SETPOINT CONTROLS -->
-
-    <!-- AWS SECTION -->
-
     <Button
         android:id="@+id/btnMinus"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="16dp"
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@id/btnAdd"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/setpointText" />
 
@@ -89,8 +87,8 @@
         android:id="@+id/btnAdd"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="56dp"
         android:text="+"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

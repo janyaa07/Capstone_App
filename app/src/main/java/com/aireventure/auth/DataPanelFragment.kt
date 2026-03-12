@@ -18,7 +18,7 @@ class DataPanelFragment : Fragment() {
 
     private var _binding: FragmentDataPanelBinding? = null
     private val binding get() = _binding!!
-    private var currentSetpoint = 22.0f
+    private var currentSetpoint = BluetoothConnection.currentSetpoint
     private var userIsChanging = false
     private val handler = android.os.Handler(android.os.Looper.getMainLooper())
     private var setpointJob: Runnable? = null
@@ -47,12 +47,16 @@ class DataPanelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        currentSetpoint = BluetoothConnection.currentSetpoint
+        binding.tvCurrentSetpoint.text = "Set To: ${"%.1f".format(currentSetpoint)}°C"
+
         refreshHandler.post(refreshRunnable)
         bluetoothSocket = BluetoothConnection.socket
         startBluetoothReading()
 
         binding.btnAdd.setOnClickListener {
             currentSetpoint += 0.5f
+            BluetoothConnection.currentSetpoint = currentSetpoint
             userIsChanging = true
             binding.tvCurrentSetpoint.text = "Set To: ${"%.1f".format(currentSetpoint)}°C"
             setpointJob?.let { handler.removeCallbacks(it) }
@@ -65,6 +69,7 @@ class DataPanelFragment : Fragment() {
 
         binding.btnMinus.setOnClickListener {
             currentSetpoint -= 0.5f
+            BluetoothConnection.currentSetpoint = currentSetpoint
             userIsChanging = true
             binding.tvCurrentSetpoint.text = "Set To: ${"%.1f".format(currentSetpoint)}°C"
             setpointJob?.let { handler.removeCallbacks(it) }
@@ -129,7 +134,8 @@ class DataPanelFragment : Fragment() {
                     "SpRmT_C" -> {
                         binding.setpointText.text = "BT Setpoint: ${keyValue[1]} °C"
                         if (!userIsChanging) {
-                            keyValue[1].toFloatOrNull()?.let { currentSetpoint = it }
+                            keyValue[1].toFloatOrNull()?.let { currentSetpoint = it
+                                BluetoothConnection.currentSetpoint = it }
                         }
                     }
                 }
