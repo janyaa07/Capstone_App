@@ -11,6 +11,9 @@
         android:layout_height="240dp"
         android:layout_gravity="center_horizontal">
 
+
+
+
         <!-- Grey Outer Track -->
         <View
             android:layout_width="220dp"
@@ -45,6 +48,19 @@
 
     </FrameLayout>
 
+    <TextView
+        android:text="ML Prediction"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/mlPredictionValue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <!-- +/- Controls -->
     <LinearLayout
@@ -129,6 +145,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
+
+
     </LinearLayout>
+
+
 
 </LinearLayout>

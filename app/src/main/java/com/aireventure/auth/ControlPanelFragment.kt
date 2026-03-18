@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import com.aireventure.auth.databinding.FragmentControlPanelBinding
 import androidx.fragment.app.activityViewModels
 import kotlin.math.roundToInt
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
 
 class ControlPanelFragment : Fragment() {
 
@@ -29,6 +32,37 @@ class ControlPanelFragment : Fragment() {
 
         // Fetch latest AWS data when panel opens
         sensorViewModel.refreshAws()
+
+        // Fetch ML Prediction
+        MLRetrofitClient.instance.getPredictions().enqueue(object : retrofit2.Callback<MLResponse> {
+            override fun onResponse(
+                call: retrofit2.Call<MLResponse>,
+                response: retrofit2.Response<MLResponse>
+            ) {
+                val bodyString = response.body()?.body ?: run {
+                    activity?.runOnUiThread { binding.mlPredictionValue.text = "No data" }
+                    return
+                }
+
+                val type = object : TypeToken<List<MLPrediction>>() {}.type
+                val list: List<MLPrediction> = Gson().fromJson(bodyString, type)
+
+                val latest = list.firstOrNull()
+                val raw = latest?.prediction ?: "--"
+                val clean = raw.replace("[", "").replace("]", "").toDoubleOrNull()
+
+                activity?.runOnUiThread {
+                    binding.mlPredictionValue.text =
+                        if (clean != null) "%.2f°C".format(clean) else "--"
+                }
+            }
+
+            override fun onFailure(call: retrofit2.Call<MLResponse>, t: Throwable) {
+                activity?.runOnUiThread {
+                    binding.mlPredictionValue.text = "Error: ${t.message}"
+                }
+            }
+        })
 
         // Observe AWS data
         sensorViewModel.latest.observe(viewLifecycleOwner) { latest ->
