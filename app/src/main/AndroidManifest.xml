@@ -24,7 +24,7 @@
 
         <!-- Auth / Login screen -->
         <activity
-            android:name=".AuthActivity"
+            android:name=".AuthFiles.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
