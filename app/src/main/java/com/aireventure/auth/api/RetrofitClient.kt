@@ -1,5 +1,4 @@
-
-package com.aireventure.auth
+package com.aireventure.auth.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

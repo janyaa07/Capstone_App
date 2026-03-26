@@ -34,16 +34,16 @@
 
         <!-- Pairing screen -->
         <activity
-            android:name=".PairingActivity"
+            android:name=".ui.PairingActivity"
             android:exported="false" />
 
         <!-- Converter screen -->
         <activity
-            android:name=".ConverterActivity"
+            android:name=".ui.ConverterActivity"
             android:exported="false" />
         <!-- Home screen -->
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".ConnectedDevicesActivity"/>
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.ConnectedDevicesActivity"/>
 
 
 

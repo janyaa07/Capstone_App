@@ -118,19 +118,10 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/WifiBluetoothButton"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:text="User Profile"
-            android:backgroundTint="#FBC30E"
-            android:textColor="@color/black"
-            android:textAllCaps="false"
-            android:layout_marginBottom="8dp"/>
-
-        <Button
-            android:id="@+id/connectedDevicesButton"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="Connected Devices"
+            android:text="Pairing Mode"
             android:backgroundTint="#FBC30E"
             android:textColor="@color/black"
             android:textAllCaps="false"
@@ -138,6 +129,7 @@
 
         <Button
             android:layout_width="match_parent"
+            android:id="@+id/SignOut"
             android:layout_height="44dp"
             android:text="Sign Out"
             android:backgroundTint="#FBC30E"

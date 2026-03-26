@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.aireventure.auth.PairingActivity
+import com.aireventure.auth.ui.PairingActivity
 import com.aireventure.auth.databinding.FragmentLoginBinding
 import kotlinx.coroutines.launch
 

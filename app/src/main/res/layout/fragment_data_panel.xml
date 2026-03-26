@@ -5,134 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<TextView
-        android:id="@+id/liveDataText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Waiting for Bluetooth..."
-        android:textSize="16sp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>-->
-
-    <!-- BLUETOOTH SECTION -->
-    <!--<TextView
-        android:id="@+id/btAirFlowText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="BT Air Flow:"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/liveDataText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
-
-    <TextView
-        android:id="@+id/btRoomTempText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="BT Room Temp:"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btAirFlowText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/setpointText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="BT Setpoint:"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btRoomTempText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>-->
 
 
-    <!-- SETPOINT CONTROLS -->
-
-    <!-- AWS SECTION -->
-
-    <!--<TextView
-        android:id="@+id/tvCurrentSetpoint"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Set To: 22.0°C"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setpointText" />
-
-    <Button
-        android:id="@+id/btnMinus"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:text="-"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@id/btnAdd"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setpointText" />
-
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="56dp"
-        android:text="+"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setpointText" />
-
-    <TextView
-        android:id="@+id/awsAirFlowText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="AWS Air Flow:"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setpointText" />
-
-    <TextView
-        android:id="@+id/awsRoomTempText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="AWS Room Temp:"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/awsAirFlowText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/awsSetpointText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="AWS Setpoint:"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/awsRoomTempText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
+
+        <TextView
+            android:id="@+id/liveDataText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"/>
 
         <!-- 1. Room Temperature -->
         <TextView
