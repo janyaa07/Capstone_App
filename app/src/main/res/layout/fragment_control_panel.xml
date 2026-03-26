@@ -62,7 +62,7 @@
             android:layout_marginTop="8dp"
             android:visibility="gone"/>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/mlPredictionLabel"
             android:text="ML Prediction"
             android:textStyle="bold"
@@ -76,7 +76,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/>-->
 
         <!-- +/- Controls -->
         <LinearLayout

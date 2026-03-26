@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,80 +12,398 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/liveDataText"
+        <!-- Brand Header -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:gravity="center"
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
 
-        <!-- 1. Room Temperature -->
+
+            <!-- Live indicator -->
+            <View
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/bg_live_dot"
+                android:layout_marginEnd="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live"
+                android:textSize="11sp"
+                android:textColor="#888888" />
+        </LinearLayout>
+
+        <!-- ML Prediction Section Label -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Room Temperature vs Time"
+            android:text="ML PREDICTION"
+            android:textSize="10sp"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
+            android:letterSpacing="0.12"
+            android:textColor="#AAAAAA"
+            android:paddingBottom="8dp" />
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/temperatureChart"
+        <!-- ML Prediction Card (dark) -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- 2. Pressure -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pressure vs Time"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_prediction_card"
+            android:padding="18dp"
+            android:layout_marginBottom="20dp">
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/pressureChart"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Damper Opening"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:letterSpacing="0.05"
+                android:paddingBottom="4dp" />
 
-        <!-- 3. Discharge Airflow (Derived) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/mlPredictionValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textSize="38sp"
+                    android:textStyle="bold"
+                    android:textColor="#FBC30E"
+                    android:lineSpacingExtra="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="14sp"
+                    android:textColor="#888888"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="6dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Predicted · Updated just now"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:paddingTop="6dp" />
+        </LinearLayout>
+
+        <!-- Data Visualizations Section Label -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Discharge Airflow vs Time"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
-
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/dischargeAirflowChart"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- 4. Discharge Airflow vs Pressure -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Discharge Airflow vs Pressure"
+            android:text="DATA VISUALIZATIONS"
+            android:textSize="10sp"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
+            android:letterSpacing="0.12"
+            android:textColor="#AAAAAA"
+            android:paddingBottom="10dp" />
 
-        <com.github.mikephil.charting.charts.ScatterChart
-            android:id="@+id/dischargeAirflowPressureChart"
+        <!-- Chart Cards Container -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@drawable/divider_8dp"
+            android:showDividers="middle">
+
+            <!-- Room Temp vs Time -->
+            <LinearLayout
+                android:id="@+id/temperatureCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_chart_card">
+
+                <LinearLayout
+                    android:id="@+id/temperatureRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="14dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_icon_amber"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_chart_line"
+                            android:contentDescription="temperature chart" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Room Temp vs Time"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A1A" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="°C over session"
+                            android:textSize="11sp"
+                            android:textColor="#AAAAAA" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/temperatureChevron"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="expand" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/temperatureChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Change in Pressure vs Time -->
+            <LinearLayout
+                android:id="@+id/pressureCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_chart_card">
+
+                <LinearLayout
+                    android:id="@+id/pressureRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="14dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_icon_blue"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_chart_bar"
+                            android:contentDescription="pressure chart" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change in Pressure vs Time"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A1A" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ΔP over last 5 min"
+                            android:textSize="11sp"
+                            android:textColor="#AAAAAA" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/pressureChevron"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="expand" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/pressureChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Discharge Airflow vs Time -->
+            <LinearLayout
+                android:id="@+id/dischargeAirflowTimeCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_chart_card">
+
+                <LinearLayout
+                    android:id="@+id/dischargeAirflowTimeRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="14dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_icon_green"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_chart_line"
+                            android:contentDescription="airflow chart" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Discharge Airflow vs Time"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A1A" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CFM over last session"
+                            android:textSize="11sp"
+                            android:textColor="#AAAAAA" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/dischargeAirflowTimeChevron"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="expand" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/dischargeAirflowChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Discharge Airflow vs Pressure -->
+            <LinearLayout
+                android:id="@+id/dischargeAirflowPressureCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_chart_card">
+
+                <LinearLayout
+                    android:id="@+id/dischargeAirflowPressureRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="14dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_icon_purple"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_chart_scatter"
+                            android:contentDescription="scatter chart" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Discharge Airflow vs Pressure"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A1A" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scatter · correlation view"
+                            android:textSize="11sp"
+                            android:textColor="#AAAAAA" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/dischargeAirflowPressureChevron"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:contentDescription="expand" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.ScatterChart
+                    android:id="@+id/dischargeAirflowPressureChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -212,9 +212,9 @@ class ControlPanelFragment : Fragment() {
 
     private fun setupWifiMode() {
         binding.deviceIdText.text = "Mode: WiFi"
-        binding.mlPredictionValue.visibility = View.VISIBLE
-        binding.mlPredictionLabel.visibility = View.VISIBLE
-        binding.mlPredictionValue.text = "Loading..."
+        //binding.mlPredictionValue.visibility = View.VISIBLE
+        //binding.mlPredictionLabel.visibility = View.VISIBLE
+        //binding.mlPredictionValue.text = "Loading..."
 
         sensorViewModel.refreshAws()
 
@@ -226,7 +226,7 @@ class ControlPanelFragment : Fragment() {
                 val bodyString = response.body()?.body ?: run {
                     activity?.runOnUiThread {
                         if (_binding == null) return@runOnUiThread
-                        binding.mlPredictionValue.text = "No data"
+                        //binding.mlPredictionValue.text = "No data"
                     }
                     return
                 }
@@ -237,7 +237,7 @@ class ControlPanelFragment : Fragment() {
                 val clean = raw.replace("[", "").replace("]", "").toDoubleOrNull()
                 activity?.runOnUiThread {
                     if (_binding == null) return@runOnUiThread
-                    binding.mlPredictionValue.text =
+                    //binding.mlPredictionValue.text =
                         if (clean != null) "%.2f%%".format(clean) else "--"
                 }
             }
@@ -245,7 +245,7 @@ class ControlPanelFragment : Fragment() {
             override fun onFailure(call: retrofit2.Call<MLResponse>, t: Throwable) {
                 activity?.runOnUiThread {
                     if (_binding == null) return@runOnUiThread
-                    binding.mlPredictionValue.text = "Error: ${t.message}"
+                    //binding.mlPredictionValue.text = "Error: ${t.message}"
                 }
             }
         })
@@ -273,8 +273,8 @@ class ControlPanelFragment : Fragment() {
 
     private fun setupBluetoothMode() {
         binding.deviceIdText.text = "Mode: Bluetooth"
-        binding.mlPredictionValue.visibility = View.GONE
-        binding.mlPredictionLabel.visibility = View.GONE
+        //binding.mlPredictionValue.visibility = View.GONE
+        //binding.mlPredictionLabel.visibility = View.GONE
         updateSetpointDisplay()
         startWriteThread()
         startBluetoothReading()

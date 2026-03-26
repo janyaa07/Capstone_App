@@ -22,6 +22,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.math.sqrt
+import com.aireventure.auth.api.MLRetrofitClient
+import com.aireventure.auth.model.MLPrediction
+import com.aireventure.auth.model.MLResponse
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class DataPanelFragment : Fragment() {
 
@@ -54,9 +59,12 @@ class DataPanelFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Show connection mode status
-        binding.liveDataText.text = if (ConnectionMode.isBluetooth) "Bluetooth Mode" else "WiFi Mode"
+        //binding.liveDataText.text = if (ConnectionMode.isBluetooth) "Bluetooth Mode" else "WiFi Mode"
 
         refreshHandler.post(refreshRunnable)
+
+        setupDropdowns()
+        fetchMlPrediction()
 
         // REMOVED: startBluetoothReading() — ControlPanel owns the BT socket now
     }
@@ -187,6 +195,73 @@ class DataPanelFragment : Fragment() {
 
     private fun formatTimeLabel(timestamp: String): String {
         return if (timestamp.length >= 16) timestamp.substring(11, 16) else timestamp
+    }
+
+    private fun setupDropdowns() {
+        binding.temperatureRow.setOnClickListener {
+            toggleSection(binding.temperatureChart, binding.temperatureChevron)
+        }
+
+        binding.pressureRow.setOnClickListener {
+            toggleSection(binding.pressureChart, binding.pressureChevron)
+        }
+
+        binding.dischargeAirflowTimeRow.setOnClickListener {
+            toggleSection(binding.dischargeAirflowChart, binding.dischargeAirflowTimeChevron)
+        }
+
+        binding.dischargeAirflowPressureRow.setOnClickListener {
+            toggleSection(binding.dischargeAirflowPressureChart, binding.dischargeAirflowPressureChevron)
+        }
+    }
+
+    private fun toggleSection(content: View, arrow: View) {
+        val isOpening = content.visibility != View.VISIBLE
+
+        content.visibility = if (isOpening) View.VISIBLE else View.GONE
+
+        arrow.animate()
+            .rotation(if (isOpening) 180f else 0f)
+            .setDuration(200)
+            .start()
+    }
+    private fun fetchMlPrediction() {
+        binding.mlPredictionValue.text = "Loading..."
+
+        MLRetrofitClient.instance.getPredictions().enqueue(object : retrofit2.Callback<MLResponse> {
+            override fun onResponse(
+                call: retrofit2.Call<MLResponse>,
+                response: retrofit2.Response<MLResponse>
+            ) {
+                val bodyString = response.body()?.body ?: run {
+                    activity?.runOnUiThread {
+                        if (_binding == null) return@runOnUiThread
+                        binding.mlPredictionValue.text = "No data"
+                    }
+                    return
+                }
+
+                val type = object : com.google.gson.reflect.TypeToken<List<MLPrediction>>() {}.type
+                val list: List<MLPrediction> = com.google.gson.Gson().fromJson(bodyString, type)
+                val latest = list.firstOrNull()
+
+                val raw = latest?.prediction ?: "--"
+                val clean = raw.replace("[", "").replace("]", "").toDoubleOrNull()
+
+                activity?.runOnUiThread {
+                    if (_binding == null) return@runOnUiThread
+                    binding.mlPredictionValue.text =
+                        if (clean != null) "%.2f".format(clean) else "--"
+                }
+            }
+
+            override fun onFailure(call: retrofit2.Call<MLResponse>, t: Throwable) {
+                activity?.runOnUiThread {
+                    if (_binding == null) return@runOnUiThread
+                    binding.mlPredictionValue.text = "Error"
+                }
+            }
+        })
     }
 
     override fun onDestroyView() {
