@@ -254,7 +254,7 @@ class ControlPanelFragment : Fragment() {
             if (_binding == null) return@observe
             if (latest == null) return@observe
 
-            binding.currentTempValue.text = "${latest.RmT_C}°C"
+            binding.currentTempValue.text = "${"%.1f".format(latest.RmT_C.toDouble())}°C"
             binding.airflowValue.text = "${latest.AbsAirFlow_cfm} CFM"
             binding.deviceIdText.text = "Device ID: ${latest.device_id}"
 
