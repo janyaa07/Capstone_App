@@ -12,18 +12,40 @@ import androidx.lifecycle.lifecycleScope
 import com.aireventure.auth.ui.PairingActivity
 import com.aireventure.auth.databinding.FragmentLoginBinding
 import kotlinx.coroutines.launch
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import com.aireventure.auth.R
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: AuthViewModel by viewModels { AuthViewModelFactory(requireContext()) }
+    private var isPasswordVisible = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.eyeToggle.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+
+            if (isPasswordVisible) {
+                binding.passwordInput.transformationMethod =
+                    HideReturnsTransformationMethod.getInstance()
+                binding.eyeToggle.setImageResource(R.drawable.eye_on)
+            } else {
+                binding.passwordInput.transformationMethod =
+                    PasswordTransformationMethod.getInstance()
+                binding.eyeToggle.setImageResource(R.drawable.eye_off)
+            }
+
+            // Keep cursor at end after toggling
+            binding.passwordInput.setSelection(
+                binding.passwordInput.text?.length ?: 0
+            )
+        }
 
         binding.loginButton.setOnClickListener {
             viewModel.login(

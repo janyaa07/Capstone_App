@@ -35,28 +35,24 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="4dp">
 
-            <!-- Grey track ring -->
             <View
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_gauge_track" />
 
-            <!-- Yellow active ring -->
             <View
                 android:layout_width="216dp"
                 android:layout_height="216dp"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_gauge_active" />
 
-            <!-- White center -->
             <View
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_inner_white" />
 
-            <!-- Setpoint temp -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,7 +72,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SETPOINT"
+                    android:text="ACTIVE ON DEVICE"
                     android:textSize="9sp"
                     android:letterSpacing="0.1"
                     android:textColor="#BBBBBB" />
@@ -97,39 +93,68 @@
 
         <!-- ── +/- Stepper ── -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="24dp">
 
-            <ImageView
-                android:id="@+id/icon_minus"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/icon_minus"
-                android:background="@drawable/bg_step_btn"
-                android:padding="10dp" />
-
+            <!-- Label: what the stepper controls -->
             <TextView
-                android:id="@+id/pendingSetpointText"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="20sp"
+                android:text="NEW TARGET"
+                android:textSize="9sp"
                 android:textStyle="bold"
-                android:textColor="#FBC30E"
-                android:text="" />
+                android:letterSpacing="0.12"
+                android:textColor="#AAAAAA"
+                android:paddingBottom="8dp" />
 
-            <ImageView
-                android:id="@+id/icon_plus"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/icon_add"
-                android:background="@drawable/bg_step_btn"
-                android:padding="10dp" />
+            <!-- +/- row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/icon_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_minus"
+                    android:background="@drawable/bg_step_btn"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/pendingSetpointText"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FBC30E"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/icon_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_add"
+                    android:background="@drawable/bg_step_btn"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <!-- Pending sync hint — shown in Kotlin when pending != current -->
+            <TextView
+                android:id="@+id/pendingSyncHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="#E65100"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
         </LinearLayout>
 
         <!-- ── Section label ── -->
@@ -144,7 +169,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="10dp" />
 
-        <!-- ── 2×1 sensor grid (only Room Temp + Airflow) ── -->
+        <!-- ── 2×1 sensor grid ── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
