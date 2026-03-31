@@ -1,5 +1,6 @@
 package com.aireventure.auth
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,7 @@ class ControlPanelFragment : Fragment() {
 
     @Volatile private var isReading = false
 
-    // FIX: LinkedBlockingQueue replaces AtomicReference + sleep(10ms)
+    // LinkedBlockingQueue replaces AtomicReference + sleep(10ms)
     // poll() blocks instantly until command arrives — no busy waiting
     // clear() + offer() = only latest value ever sent
     private val writeQueue = LinkedBlockingQueue<String>(1)
@@ -36,6 +37,9 @@ class ControlPanelFragment : Fragment() {
 
     private val setpointHandler = android.os.Handler(android.os.Looper.getMainLooper())
     private var setpointRunnable: Runnable? = null
+
+    // separate handler for button re-enable so it doesn't conflict with status text handler
+    private val buttonHandler = android.os.Handler(android.os.Looper.getMainLooper())
 
     private val refreshHandler = android.os.Handler(android.os.Looper.getMainLooper())
     private val refreshInterval = 1000L
@@ -81,11 +85,11 @@ class ControlPanelFragment : Fragment() {
                 BluetoothConnection.pendingSetpoint = newValue
                 updateSetpointDisplay()
                 if (ConnectionMode.isBluetooth) {
-                    // FIX: disable buttons so user can't flood queue while hardware is writing
                     disableButtons()
                     enqueueWrite(newValue)
                     scheduleSetpoint(newValue)
                 } else {
+                    disableButtons()
                     sendSetpointWifi(newValue)
                 }
             }
@@ -99,38 +103,41 @@ class ControlPanelFragment : Fragment() {
                 BluetoothConnection.pendingSetpoint = newValue
                 updateSetpointDisplay()
                 if (ConnectionMode.isBluetooth) {
-                    // FIX: disable buttons so user can't flood queue while hardware is writing
                     disableButtons()
                     enqueueWrite(newValue)
                     scheduleSetpoint(newValue)
                 } else {
+                    disableButtons()
                     sendSetpointWifi(newValue)
                 }
             }
         }
     }
 
-    // FIX: disable both buttons while waiting for hardware ACK
+    // disable both buttons while waiting for hardware ACK
+    // prevents command flooding — one press one write one confirm
     private fun disableButtons() {
         if (_binding == null) return
         binding.iconPlus.isEnabled = false
         binding.iconMinus.isEnabled = false
-        // Safety re-enable after 15s so buttons never get permanently stuck
-        setpointHandler.postDelayed({
+        // safety re-enable after 15s so buttons never get permanently stuck
+        buttonHandler.removeCallbacksAndMessages(null)
+        buttonHandler.postDelayed({
             if (_binding == null) return@postDelayed
             binding.iconPlus.isEnabled = true
             binding.iconMinus.isEnabled = true
         }, 15000)
     }
 
-    // FIX: re-enable buttons when hardware confirms
+    // re-enable buttons when hardware confirms
     private fun enableButtons() {
         if (_binding == null) return
+        buttonHandler.removeCallbacksAndMessages(null)
         binding.iconPlus.isEnabled = true
         binding.iconMinus.isEnabled = true
     }
 
-    // Always replace stale command with latest — mirrors RPi deque(maxlen=1)
+    // always replace stale command with latest — mirrors RPi deque(maxlen=1)
     private fun enqueueWrite(value: Float) {
         writeQueue.clear()
         writeQueue.offer("SET:SpRmT_C:$value\n")
@@ -147,7 +154,6 @@ class ControlPanelFragment : Fragment() {
                     if (socket != null && socket.isConnected) {
                         socket.outputStream.write(command.toByteArray())
                         socket.outputStream.flush()
-                        // no sleep after write — returns immediately to wait for next command
                     } else {
                         // socket not ready — put command back so it is not lost
                         writeQueue.clear()
@@ -196,12 +202,14 @@ class ControlPanelFragment : Fragment() {
                     activity?.runOnUiThread {
                         if (_binding == null) return@runOnUiThread
                         if (response.isSuccessful) {
+                            enableButtons()
                             binding.setpointStatusText.apply {
                                 text = "✓ Sent ${"%.1f".format(value)}°C to cloud"
                                 setTextColor(android.graphics.Color.parseColor("#2E7D32"))
                                 visibility = View.VISIBLE
                             }
                         } else {
+                            enableButtons()
                             BluetoothConnection.pendingSetpoint = null
                             updateSetpointDisplay()
                             binding.setpointStatusText.apply {
@@ -221,6 +229,7 @@ class ControlPanelFragment : Fragment() {
                 override fun onFailure(call: retrofit2.Call<Void>, t: Throwable) {
                     activity?.runOnUiThread {
                         if (_binding == null) return@runOnUiThread
+                        enableButtons()
                         BluetoothConnection.pendingSetpoint = null
                         updateSetpointDisplay()
                         binding.setpointStatusText.apply {
@@ -321,7 +330,7 @@ class ControlPanelFragment : Fragment() {
                             }
                         }
 
-                        // Handle ACK:SpRmT_C:value
+                        // handle ACK:SpRmT_C:value
                         if (kv.size == 3 && kv[0] == "ACK" && kv[1] == "SpRmT_C") {
                             kv[2].toFloatOrNull()?.let { ackValue ->
                                 BluetoothConnection.currentSetpoint = ackValue
@@ -348,7 +357,7 @@ class ControlPanelFragment : Fragment() {
     private fun showConfirmed(value: Float) {
         activity?.runOnUiThread {
             if (_binding == null) return@runOnUiThread
-            // FIX: re-enable buttons when hardware confirms
+            // re-enable buttons when hardware confirms
             enableButtons()
             binding.setpointStatusText.apply {
                 text = "✓ Device confirmed ${"%.1f".format(value)}°C"
@@ -379,6 +388,7 @@ class ControlPanelFragment : Fragment() {
         writeThread = null
         refreshHandler.removeCallbacks(refreshRunnable)
         setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
+        buttonHandler.removeCallbacksAndMessages(null)
         _binding = null
     }
 }
