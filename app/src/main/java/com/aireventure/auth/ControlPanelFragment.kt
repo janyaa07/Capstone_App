@@ -17,7 +17,8 @@ import com.aireventure.auth.model.SetpointRequest
 import com.aireventure.auth.viewmodel.SensorViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.util.concurrent.atomic.AtomicReference
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.TimeUnit
 
 class ControlPanelFragment : Fragment() {
 
@@ -25,8 +26,12 @@ class ControlPanelFragment : Fragment() {
     private val binding get() = _binding!!
     private val sensorViewModel: SensorViewModel by activityViewModels()
 
-    private var isReading = false
-    private val pendingWrite = AtomicReference<String?>(null)
+    @Volatile private var isReading = false
+
+    // FIX: LinkedBlockingQueue replaces AtomicReference + sleep(10ms)
+    // poll() blocks instantly until command arrives — no busy waiting
+    // clear() + offer() = only latest value ever sent
+    private val writeQueue = LinkedBlockingQueue<String>(1)
     private var writeThread: Thread? = null
 
     private val setpointHandler = android.os.Handler(android.os.Looper.getMainLooper())
@@ -67,40 +72,113 @@ class ControlPanelFragment : Fragment() {
         } else {
             setupWifiMode()
         }
-// PLUS button
+
+        // PLUS button
         binding.iconPlus.setOnClickListener {
             val current = BluetoothConnection.pendingSetpoint ?: BluetoothConnection.currentSetpoint
             if (current < 28f) {
-                BluetoothConnection.pendingSetpoint = current + 0.5f
+                val newValue = current + 0.5f
+                BluetoothConnection.pendingSetpoint = newValue
                 updateSetpointDisplay()
                 if (ConnectionMode.isBluetooth) {
-                    pendingWrite.set("SET:SpRmT_C:${BluetoothConnection.pendingSetpoint}\n")
-                    scheduleSetpoint(BluetoothConnection.pendingSetpoint!!) // ← only for BT
+                    // FIX: disable buttons so user can't flood queue while hardware is writing
+                    disableButtons()
+                    enqueueWrite(newValue)
+                    scheduleSetpoint(newValue)
                 } else {
-                    sendSetpointWifi(BluetoothConnection.pendingSetpoint!!) // ← handles its own status
+                    sendSetpointWifi(newValue)
                 }
             }
         }
 
-// MINUS button
+        // MINUS button
         binding.iconMinus.setOnClickListener {
             val current = BluetoothConnection.pendingSetpoint ?: BluetoothConnection.currentSetpoint
             if (current > 18f) {
-                BluetoothConnection.pendingSetpoint = current - 0.5f
+                val newValue = current - 0.5f
+                BluetoothConnection.pendingSetpoint = newValue
                 updateSetpointDisplay()
                 if (ConnectionMode.isBluetooth) {
-                    pendingWrite.set("SET:SpRmT_C:${BluetoothConnection.pendingSetpoint}\n")
-                    scheduleSetpoint(BluetoothConnection.pendingSetpoint!!) // ← only for BT
+                    // FIX: disable buttons so user can't flood queue while hardware is writing
+                    disableButtons()
+                    enqueueWrite(newValue)
+                    scheduleSetpoint(newValue)
                 } else {
-                    sendSetpointWifi(BluetoothConnection.pendingSetpoint!!) // ← handles its own status
+                    sendSetpointWifi(newValue)
                 }
             }
         }
     }
 
+    // FIX: disable both buttons while waiting for hardware ACK
+    private fun disableButtons() {
+        if (_binding == null) return
+        binding.iconPlus.isEnabled = false
+        binding.iconMinus.isEnabled = false
+        // Safety re-enable after 15s so buttons never get permanently stuck
+        setpointHandler.postDelayed({
+            if (_binding == null) return@postDelayed
+            binding.iconPlus.isEnabled = true
+            binding.iconMinus.isEnabled = true
+        }, 15000)
+    }
+
+    // FIX: re-enable buttons when hardware confirms
+    private fun enableButtons() {
+        if (_binding == null) return
+        binding.iconPlus.isEnabled = true
+        binding.iconMinus.isEnabled = true
+    }
+
+    // Always replace stale command with latest — mirrors RPi deque(maxlen=1)
+    private fun enqueueWrite(value: Float) {
+        writeQueue.clear()
+        writeQueue.offer("SET:SpRmT_C:$value\n")
+    }
+
+    private fun startWriteThread() {
+        isReading = true
+        writeThread = Thread {
+            while (isReading) {
+                try {
+                    // poll() blocks up to 100ms waiting for command — no busy sleep loop
+                    val command = writeQueue.poll(100, TimeUnit.MILLISECONDS) ?: continue
+                    val socket = BluetoothConnection.socket
+                    if (socket != null && socket.isConnected) {
+                        socket.outputStream.write(command.toByteArray())
+                        socket.outputStream.flush()
+                        // no sleep after write — returns immediately to wait for next command
+                    } else {
+                        // socket not ready — put command back so it is not lost
+                        writeQueue.clear()
+                        writeQueue.offer(command)
+                        Thread.sleep(200)
+                    }
+                } catch (e: Exception) {
+                    println("Write thread error: $e")
+                    Thread.sleep(200)
+                }
+            }
+        }.also { it.start() }
+    }
+
+    private fun scheduleSetpoint(value: Float) {
+        if (_binding == null) return
+        setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
+        binding.setpointStatusText.apply {
+            text = "⏳ Sending ${"%.1f".format(value)}°C — waiting for device..."
+            setTextColor(android.graphics.Color.parseColor("#E65100"))
+            visibility = View.VISIBLE
+        }
+        setpointRunnable = Runnable {
+            if (_binding == null) return@Runnable
+            binding.setpointStatusText.visibility = View.GONE
+        }
+        setpointHandler.postDelayed(setpointRunnable!!, 15000)
+    }
+
     // WiFi setpoint — sends to API Gateway → Lambda → DynamoDB → RPi polls
     private fun sendSetpointWifi(value: Float) {
-        // FIX: show sending status immediately
         if (_binding != null) {
             binding.setpointStatusText.apply {
                 text = "⏳ Sending ${"%.1f".format(value)}°C to cloud..."
@@ -108,11 +186,7 @@ class ControlPanelFragment : Fragment() {
                 visibility = View.VISIBLE
             }
         }
-
-        val request = SetpointRequest(
-            device_id = "23",
-            SpRmT_C = value
-        )
+        val request = SetpointRequest(device_id = "23", SpRmT_C = value)
         WifiSetpointClient.instance.updateSetpoint(request).enqueue(
             object : retrofit2.Callback<Void> {
                 override fun onResponse(
@@ -122,8 +196,6 @@ class ControlPanelFragment : Fragment() {
                     activity?.runOnUiThread {
                         if (_binding == null) return@runOnUiThread
                         if (response.isSuccessful) {
-                            // DON'T update currentSetpoint here — circle only updates from AWS data
-                            // pendingSetpoint stays set until AWS observer gets new value from RPi
                             binding.setpointStatusText.apply {
                                 text = "✓ Sent ${"%.1f".format(value)}°C to cloud"
                                 setTextColor(android.graphics.Color.parseColor("#2E7D32"))
@@ -168,54 +240,8 @@ class ControlPanelFragment : Fragment() {
         )
     }
 
-    private fun startWriteThread() {
-        isReading = true
-        writeThread = Thread {
-            while (isReading) {
-                try {
-                    val command = pendingWrite.getAndSet(null)
-                    if (command != null) {
-                        val socket = BluetoothConnection.socket
-                        if (socket != null && socket.isConnected) {
-                            socket.outputStream.write(command.toByteArray())
-                            socket.outputStream.flush()
-                        } else {
-                            pendingWrite.compareAndSet(null, command)
-                        }
-                        Thread.sleep(10)
-                    } else {
-                        Thread.sleep(10)
-                    }
-                } catch (e: Exception) {
-                    println("Write thread error: $e")
-                    Thread.sleep(500)
-                }
-            }
-        }
-        writeThread?.start()
-    }
-
-    private fun scheduleSetpoint(value: Float) {
-        if (_binding == null) return
-        setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
-        binding.setpointStatusText.apply {
-            text = "✓ Sent ${"%.1f".format(value)}°C — waiting for device..."
-            setTextColor(android.graphics.Color.parseColor("#2E7D32"))
-            visibility = View.VISIBLE
-        }
-        setpointRunnable = Runnable {
-            if (_binding == null) return@Runnable
-            binding.setpointStatusText.visibility = View.GONE
-        }
-        setpointHandler.postDelayed(setpointRunnable!!, 3000)
-    }
-
     private fun setupWifiMode() {
         binding.deviceIdText.text = "Mode: WiFi"
-        //binding.mlPredictionValue.visibility = View.VISIBLE
-        //binding.mlPredictionLabel.visibility = View.VISIBLE
-        //binding.mlPredictionValue.text = "Loading..."
-
         sensorViewModel.refreshAws()
 
         MLRetrofitClient.instance.getPredictions().enqueue(object : retrofit2.Callback<MLResponse> {
@@ -223,13 +249,7 @@ class ControlPanelFragment : Fragment() {
                 call: retrofit2.Call<MLResponse>,
                 response: retrofit2.Response<MLResponse>
             ) {
-                val bodyString = response.body()?.body ?: run {
-                    activity?.runOnUiThread {
-                        if (_binding == null) return@runOnUiThread
-                        //binding.mlPredictionValue.text = "No data"
-                    }
-                    return
-                }
+                val bodyString = response.body()?.body ?: return
                 val type = object : TypeToken<List<MLPrediction>>() {}.type
                 val list: List<MLPrediction> = Gson().fromJson(bodyString, type)
                 val latest = list.firstOrNull()
@@ -237,44 +257,29 @@ class ControlPanelFragment : Fragment() {
                 val clean = raw.replace("[", "").replace("]", "").toDoubleOrNull()
                 activity?.runOnUiThread {
                     if (_binding == null) return@runOnUiThread
-                    //binding.mlPredictionValue.text =
-                        if (clean != null) "%.2f%%".format(clean) else "--"
+                    if (clean != null) "%.2f%%".format(clean) else "--"
                 }
             }
-
-            override fun onFailure(call: retrofit2.Call<MLResponse>, t: Throwable) {
-                activity?.runOnUiThread {
-                    if (_binding == null) return@runOnUiThread
-                    //binding.mlPredictionValue.text = "Error: ${t.message}"
-                }
-            }
+            override fun onFailure(call: retrofit2.Call<MLResponse>, t: Throwable) {}
         })
 
         sensorViewModel.latest.observe(viewLifecycleOwner) { latest ->
             if (_binding == null) return@observe
             if (latest == null) return@observe
-
             binding.currentTempValue.text = "${"%.1f".format(latest.RmT_C.toDouble())}°C"
             binding.airflowValue.text = "${latest.AbsAirFlow_cfm} CFM"
             binding.deviceIdText.text = "Device ID: ${latest.device_id}"
-
-            // Circle always reflects latest AWS value
             BluetoothConnection.currentSetpoint = latest.SpRmT_C.toFloat()
-
-            // Clear pending only when AWS confirms our sent value
             val pending = BluetoothConnection.pendingSetpoint
             if (pending != null && Math.abs(latest.SpRmT_C.toFloat() - pending) < 0.1f) {
                 BluetoothConnection.pendingSetpoint = null
             }
-
             updateSetpointDisplay()
         }
     }
 
     private fun setupBluetoothMode() {
         binding.deviceIdText.text = "Mode: Bluetooth"
-        //binding.mlPredictionValue.visibility = View.GONE
-        //binding.mlPredictionLabel.visibility = View.GONE
         updateSetpointDisplay()
         startWriteThread()
         startBluetoothReading()
@@ -293,7 +298,6 @@ class ControlPanelFragment : Fragment() {
 
                     for (part in parts) {
                         val kv = part.split(":")
-
                         if (kv.size == 2) {
                             when (kv[0]) {
                                 "RmT_C" -> kv[1].toFloatOrNull()?.let {
@@ -308,22 +312,10 @@ class ControlPanelFragment : Fragment() {
                                     BluetoothConnection.currentSetpoint = confirmedValue
                                     needsUiUpdate = true
                                     if (BluetoothConnection.pendingSetpoint != null &&
-                                        Math.abs(confirmedValue - (BluetoothConnection.pendingSetpoint ?: 0f)) < 0.1f) {
+                                        Math.abs(confirmedValue - (BluetoothConnection.pendingSetpoint ?: 0f)) < 0.1f
+                                    ) {
                                         BluetoothConnection.pendingSetpoint = null
-                                        activity?.runOnUiThread {
-                                            if (_binding == null) return@runOnUiThread
-                                            binding.setpointStatusText.apply {
-                                                text = "✓ Device confirmed ${"%.1f".format(confirmedValue)}°C"
-                                                setTextColor(android.graphics.Color.parseColor("#2E7D32"))
-                                                visibility = View.VISIBLE
-                                            }
-                                            setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
-                                            setpointRunnable = Runnable {
-                                                if (_binding == null) return@Runnable
-                                                binding.setpointStatusText.visibility = View.GONE
-                                            }
-                                            setpointHandler.postDelayed(setpointRunnable!!, 2000)
-                                        }
+                                        showConfirmed(confirmedValue)
                                     }
                                 }
                             }
@@ -335,20 +327,7 @@ class ControlPanelFragment : Fragment() {
                                 BluetoothConnection.currentSetpoint = ackValue
                                 BluetoothConnection.pendingSetpoint = null
                                 needsUiUpdate = true
-                                activity?.runOnUiThread {
-                                    if (_binding == null) return@runOnUiThread
-                                    binding.setpointStatusText.apply {
-                                        text = "✓ Device confirmed ${"%.1f".format(ackValue)}°C"
-                                        setTextColor(android.graphics.Color.parseColor("#2E7D32"))
-                                        visibility = View.VISIBLE
-                                    }
-                                    setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
-                                    setpointRunnable = Runnable {
-                                        if (_binding == null) return@Runnable
-                                        binding.setpointStatusText.visibility = View.GONE
-                                    }
-                                    setpointHandler.postDelayed(setpointRunnable!!, 2000)
-                                }
+                                showConfirmed(ackValue)
                             }
                         }
                     }
@@ -366,6 +345,25 @@ class ControlPanelFragment : Fragment() {
         }.start()
     }
 
+    private fun showConfirmed(value: Float) {
+        activity?.runOnUiThread {
+            if (_binding == null) return@runOnUiThread
+            // FIX: re-enable buttons when hardware confirms
+            enableButtons()
+            binding.setpointStatusText.apply {
+                text = "✓ Device confirmed ${"%.1f".format(value)}°C"
+                setTextColor(android.graphics.Color.parseColor("#2E7D32"))
+                visibility = View.VISIBLE
+            }
+            setpointRunnable?.let { setpointHandler.removeCallbacks(it) }
+            setpointRunnable = Runnable {
+                if (_binding == null) return@Runnable
+                binding.setpointStatusText.visibility = View.GONE
+            }
+            setpointHandler.postDelayed(setpointRunnable!!, 2000)
+        }
+    }
+
     private fun updateSetpointDisplay() {
         if (_binding == null) return
         binding.dialTempText.text = "%.1f°C".format(BluetoothConnection.currentSetpoint)
@@ -377,7 +375,7 @@ class ControlPanelFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         isReading = false
-        pendingWrite.set(null)
+        writeQueue.clear()
         writeThread = null
         refreshHandler.removeCallbacks(refreshRunnable)
         setpointRunnable?.let { setpointHandler.removeCallbacks(it) }

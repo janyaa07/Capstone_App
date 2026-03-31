@@ -13,6 +13,7 @@ import com.aireventure.auth.bluetooth.BluetoothConnection
 import com.aireventure.auth.bluetooth.ConnectionMode
 import com.aireventure.auth.databinding.ActivityPairingBinding
 import java.util.UUID
+import com.aireventure.auth.ui.HomeActivity
 
 class PairingActivity : AppCompatActivity() {
 
@@ -92,7 +93,7 @@ class PairingActivity : AppCompatActivity() {
                     binding.statusText.text = "Connected"
 
                     // Go to your existing activity that holds DataPanelFragment
-                    val intent = Intent(this, ConverterActivity::class.java)
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
 
